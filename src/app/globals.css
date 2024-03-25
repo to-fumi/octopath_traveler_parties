@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
@@ -30,4 +30,23 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.title {
+  @apply text-2xl m-5 text-red-500 bg-yellow-500;
+}
+.msg {
+  @apply text-lg m-5 text-gray-900;
+}
+.input {
+  @apply p-1 border-solid border-2 border-gray-400 rounded-sm;
+}
+.btn {
+  @apply px-7 py-2 mx-2 bg-blue-800 text-white rounded-lg;
+}
+:any-link {
+  @apply text-lg m-5 text-sky-600;
+}
+img {
+  @apply border-solid border-2 border-green-300 m-5 p-2;
 }
