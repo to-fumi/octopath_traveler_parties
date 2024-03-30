@@ -1,36 +1,97 @@
-'use client'
+// "use server"
+// import { Metadata } from 'next'
 
-import { useState } from 'react'
-import Link from 'next/link'
+// export async function generateMetadata() {
+//   return {
+//     title: 'Octopath Traveler Parties',
+//   }
+// }
 
-export default function Home() {
-  var [input, setInput] = useState("")
-  var [message, setMessage] = useState("your name:")
+// const url = 'http://localhost:3000/enemy.json'
 
-  const doChange = (event)=> {
-    setInput(event.target.value)
-  }
-  const doClick = ()=> {
-    setMessage("Hello, " + input + "!!")
-    setInput("")
-  }
+// const defaultProps = {
+//   title: "Octopath Traveler Parties",
+//   msg: "This place to put your strategy as your party."
+// }
 
+// async function getEnemyData() {
+//   const resp = await fetch(
+//     url,
+//     { cache: 'no-store' }
+//   )
+//   const result = await resp.json()
+//   return result
+// }
+
+// export default async function Home() {
+//   const data = await getEnemyData()
+//   return (
+//     <main>
+//       <h1 className="title">{defaultProps.title}</h1>
+//       <p className="msg">{defaultProps.msg}</p>
+//       <p className="msg">{data.message}</p>
+//     </main>
+//   )
+// }
+
+// "use client"
+// import { useState } from 'react'
+// import { useSearchParams } from 'next/navigation'
+
+// const url = 'http://localhost:3000/enemy.json'
+
+// async function getEnemyData() {
+//   const resp = await fetch(
+//     url,
+//     { cache: 'no-store' }
+//   )
+//   const result = await resp.json()
+//   return result
+// }
+
+// export default function Home() {
+//   const searchParams = useSearchParams()
+//   var [input, setInput] = useState("")
+//   var [msg, setMsg] = useState('dummy message.')
+//   const doChange = (event)=> {
+//     setInput(event.target.value)
+//   }
+//   function doAction() {
+//     getEnemyData().then(resp=>{
+//       setMsg(resp.message)
+//     })
+//   }
+//   return (
+//     <main>
+//       <h1 className="title">Index Page</h1>
+//       <ul> ※パラメーター
+//         <li>ID: {searchParams.get('id')}</li>
+//         <li>PASS: {searchParams.get('pass')}</li>
+//       </ul>
+//       <p className="msg">{msg}</p>
+//       <div className="form">
+//         <button className="btn"
+//         onClick={doAction}>Click</button>
+//       </div>
+//     </main>
+//   )
+// }
+
+"use server"
+
+import {serverAction} from './server-action'
+
+export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="title">Next.js sample.</h1>
-      <p className="msg">{message}</p>
-      <div className="m-5">
-        <input type="text" onChange={doChange} value={input}
-          className="input"/>
-        <button onClick={doClick}
-          className="btn">
-          Click</button>
-      </div>
-      <h1 className="title">Top page</h1>
-      <p className='msg'>This is other page sample.</p>
+    <main>
+      <h1 className="title">Index Page</h1>
+      <p className="msg">Please input number following the form.</p>
       <div>
-        <Link href="/other">go other page</Link>
+        <form className="form" action={serverAction}>
+          <input className="input" type="text" name="input"/>
+          <button className="btn">Click</button>
+        </form>
       </div>
     </main>
-  );
+  )
 }

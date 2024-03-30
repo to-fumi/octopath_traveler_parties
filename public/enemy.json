@@ -1,0 +1,8 @@
+{
+  "message":"These are enemy data.",
+  "data":[
+    {"name":"sonia","level":"U25"},
+    {"name":"argust","level":"U50"},
+    {"name":"erika","level":"U100"}
+  ]
+}
