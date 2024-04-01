@@ -1,0 +1,393 @@
+{
+  "character": [
+    {
+      "name": "フィオル",
+      "job": "盗賊",
+      "type": "名声",
+      "mainAbility": [
+        {
+          "name": "斬り落とし",
+          "description": "敵単体に剣物理攻撃（威力 170）"
+        },
+        {
+          "name": "攻防一体",
+          "description": "自身に物攻アップ15%と物防アップ15%の効果を付与（3ターン）"
+        },
+        {
+          "name": "闇衝",
+          "description": "敵単体に闇属性攻撃（威力 170）" 
+        },
+        {
+          "name": "一閃",
+          "description": "敵全体に剣物理攻撃（威力 150）"
+        },
+        {
+          "name": "三連斬",
+          "description": "敵単体に3回の剣物理攻撃（威力 65）"
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "開始時物攻強化Ⅲ",
+          "description": "戦闘開始時：自身に物攻アップ20%の効果を付与（3ターン）"
+        },
+        {
+          "name": "全快時剣攻撃強化Ⅲ",
+          "description": "HP満タン時：自身に剣攻撃ダメージアップ20%の効果を付与"
+        },
+        {
+          "name": "騎士への憧憬",
+          "description": "ブレイク中の敵がいる時\n自身に物攻アップ10%と剣攻撃ダメージアップ10%とダメージ上限アップ（効果量50000）の効果を付与"
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "光耐性強化",
+          "description": "自身の光耐性が10%アップ"
+        },
+        {
+          "name": "闇耐性強化",
+          "description": "自身の闇耐性が10%アップ"
+        },
+        {
+          "name": "光耐性強化",
+          "description": "自身の光耐性が10%アップ"
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "コラプスエンド",
+          "description": "敵単体に剣物理攻撃（威力 600）"
+        }
+      ]
+    },
+    {
+      "name": "ヴィオラ",
+      "job": "盗賊",
+      "type": "富",
+      "mainAbility": [
+        {
+          "name": "ダブルスティング",
+          "description": "敵単体に2回の短剣物理攻撃（威力 75）"
+        },
+        {
+          "name": "ライフスナッチ",
+          "description": "敵単体に短剣物理攻撃（威力 170）\nさらに、与えたダメージ量の20%のHP吸収"
+        },
+        {
+          "name": "メルトフラムダガー",
+          "description": "敵全体に火属性攻撃（威力 120）\nさらに、物防ダウン10%の効果を付与（2ターン）"
+        },
+        {
+          "name": "アンチアタックⅡ",
+          "description": "敵単体に物攻ダウン20%と\n属攻ダウン20%の効果を付与（2ターン）"
+        },
+        {
+          "name": "トリプルエッジ",
+          "description": "敵単体に3回の短剣物理攻撃（威力 65）"
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "弱体効果延長（相互/与）",
+          "description": "前衛か後衛が状態異常以外の弱体効果を付与した際の効果を1ターン延長（重複不可）"
+        },
+        {
+          "name": "吸収技強化",
+          "description": "自身に吸収技回復量アップ50%の効果を付与"
+        },
+        {
+          "name": "ブレイク時防御弱体Ⅱ",
+          "description": "自身が敵をブレイクさせた時ブレイクさせた敵に物防・属防ダウン15%の効果を付与（3ターン）"
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "氷耐性強化",
+          "description": "自身の氷耐性が10%アップ"
+        },
+        {
+          "name": "火耐性",
+          "description": "自身の火耐性が10%アップ"
+        },
+        {
+          "name": "氷耐性強化",
+          "description": "自身の氷耐性が10%アップ"
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "ヴェンデッタ",
+          "description": "敵単体に短剣物理攻撃（威力 440）\nさらに、物攻・属攻ダウン5%の効果を付与（2ターン）"
+        }
+      ]
+    },
+    {
+      "name": "ギルデロイ",
+      "job": "商人",
+      "type": "権力",
+      "mainAbility": [
+        {
+          "name": "急所突き",
+          "description": "敵単体に槍物理攻撃（威力 170）"
+        },
+        {
+          "name": "挑発",
+          "description": "敵全体に自身への挑発効果を付与（3ターン）"
+        },
+        {
+          "name": "雷衝",
+          "description": "敵単体に雷属性攻撃（威力 170）"
+        },
+        {
+          "name": "連続突き",
+          "description": "敵単体に2回の槍物理攻撃（威力 90）"
+        },
+        {
+          "name": "ボルトスパイク",
+          "description": "敵全体に槍物理攻撃（威力 150）\nさらに、中確率で麻痺の状態異常を付与（2ターン）"
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "開始時物防強化Ⅲ",
+          "description": "戦闘開始時：自身に物防アップ20%の効果を付与（3ターン）"
+        },
+        {
+          "name": "瀕死時HP治癒",
+          "description": "HP30%以下時：自身にHP自動回復の効果を付与（効力 90）"
+        },
+        {
+          "name": "コランダムボディ",
+          "description": "自身に物理耐性アップ20%の効果を付与"
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "風耐性強化",
+          "description": "自身の風耐性が10%アップ"
+        },
+        {
+          "name": "雷耐性強化",
+          "description": "自身の雷耐性が10%アップ"
+        },
+        {
+          "name": "風耐性強化",
+          "description": "自身の風耐性が10%アップ"
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "勝機の見極め",
+          "description": "自身に物理・属性攻撃に対して反撃する効果を付与（3ターン）\nさらに、物攻・物防・属防アップ10％の効果を付与（3ターン）\n反撃：対象に槍物理攻撃（威力 180）"
+        }
+      ]
+    },
+    {
+      "name": "テオ",
+      "job": "薬師",
+      "type": "権力",
+      "mainAbility": [
+        {
+          "name": "大切断",
+          "description": "敵単体に斧物理攻撃（威力 170）"
+        },
+        {
+          "name": "全体大治癒",
+          "description": "味方前衛全体に\nHP自動回復の効果を付与（2ターン/効力 120）"
+        },
+        {
+          "name": "雷衝",
+          "description": "敵単体に雷属性攻撃（威力 170）"
+        },
+        {
+          "name": "健全化",
+          "description": "味方単体の状態異常を回復\nさらに、状態異常無効化の効果を付与（一部除く/1ターン）"
+        },
+        {
+          "name": "三叉断ち",
+          "description": "ランダムなターゲットに3回の斧物理攻撃（威力 65）"
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "BP回復プラス",
+          "description": "戦闘開始時：自身に\nBP回復量1アップの効果を付与（2ターン）"
+        },
+        {
+          "name": "異常耐性強化(相互)",
+          "description": "前衛と後衛の\n状態異常耐性が50%アップ（一部除く）"
+        },
+        {
+          "name": "強化効果延長(与)Ⅱ",
+          "description": "自身が強化効果を付与した際の\n効果を2ターン延長（重複不可）"
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "風耐性強化",
+          "description": "自身の風耐性が10%アップ"
+        },
+        {
+          "name": "雷耐性強化",
+          "description": "自身の雷耐性が10%アップ"
+        },
+        {
+          "name": "風耐性強化",
+          "description": "自身の風耐性が10%アップ"
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "ポロニア印の予防薬",
+          "description": "味方前衛全体の状態異常を回復し\n状態異常無効化の効果を付与（一部除く/2ターン）\nさらに、風耐性アップ10%の効果を付与（2ターン）"
+        }
+      ]
+    },
+    {
+      "name": "スケアクロウ",
+      "job": "狩人",
+      "type": "名声",
+      "mainAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ソフィア",
+      "job": "学者",
+      "type": "富",
+      "mainAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "ミロード",
+      "job": "神官",
+      "type": "名声",
+      "mainAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "リネット",
+      "job": "踊子",
+      "type": "権力",
+      "mainAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "",
+      "job": "",
+      "type": "",
+      "mainAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "subAbility": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialParams": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ],
+      "specialWeapon": [
+        {
+          "name": "",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
