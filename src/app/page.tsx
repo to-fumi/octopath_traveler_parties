@@ -160,25 +160,103 @@
 //   )
 // }
 
+// "use client"
+// import useSWR from 'swr'
+
+// const url = '/rh'
+// const fetcher = (...args) => fetch(...args)
+//   .then(res => res.json())
+
+// export default function Home() {
+//   const {data,error,isLoading} = useSWR(url, fetcher)
+//   return (
+//     <main>
+//       <h1 className='title'>Index page</h1>
+//       <p className='msg font-bold'>
+//         ※Get data by SWR
+//       </p>
+//       <p className='msg border p-2'>
+//         {error ? 'ERROR': isLoading ?
+//           'Loading': data.content + data.image}
+//       </p>
+//     </main>
+//   )
+// }
+
+// "use client"
+// import { useState } from 'react'
+// import useSWR from 'swr'
+
+// const url = 'http://localhost:3000/rh?id='
+// const fetcher = (...args) => fetch(...args)
+//   .then(res =>  res.json())
+
+// export default function Home() {
+//   const [input, setInput] = useState(0)
+//   const {data, error, mutate, isLoading} = useSWR(url + input, fetcher)
+//   const doChange = (event) => {
+//     const val = event.target.value
+//     setInput(val)
+//     mutate(url + val)
+//   }
+//   return (
+//     <main>
+//       <h1 className='title'>Index page</h1>
+//       <p className='msg font-bold'>
+//         #Get data by SWR
+//       </p>
+//       <input type="number" min="0" max="2"
+//         className='input m-5'
+//         value={input} onChange={doChange} />
+//       <p className='msg border p-2'>
+//         {error ? "ERROR" : isLoading ?
+//           'loading...' : JSON.stringify(data)}
+//       </p>
+//     </main>
+//   )
+// }
+
 "use client"
+import { useState } from 'react'
 import useSWR from 'swr'
 
-const url = '/rh'
+const url = 'http://localhost:3000/rh'
 const fetcher = (...args) => fetch(...args)
   .then(res => res.json())
 
 export default function Home() {
-  const {data,error,isLoading} = useSWR(url, fetcher)
+  const [input, setInput] = useState('')
+  const {data, error, mutate, isLoading} = useSWR(url, fetcher)
+  const doChange = (event)=> {
+    const val = event.target.value
+    setInput(val)
+    mutate(url)
+  }
+  const doAction = ()=> {
+    const opts = {
+      method:'POST',
+      body:JSON.stringify({content:input})
+    }
+    fetch(url,opts).then(resp=>{
+      setInput('')
+      mutate(url)
+    })
+  }
   return (
     <main>
-      <h1 className='title'>Index page</h1>
+      <h1 className='title'>Index Page</h1>
       <p className='msg font-bold'>
-        ※Get data by SWR
+        #Get data by SWR
       </p>
-      <p className='msg border p-2'>
-        {error ? 'ERROR': isLoading ?
-          'Loading': data.content + data.image}
-      </p>
+      <input type='text' className='input m-5'
+        value={input} onChange={doChange} />
+      <button onClick={doAction} className='btn'>
+        Click
+      </button>
+      <pre className='msg border p-2'>
+        {error ? 'Error': isLoading ?
+          'loading...' : data.content}
+      </pre>
     </main>
   )
 }
