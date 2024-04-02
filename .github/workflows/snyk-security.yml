@@ -36,8 +36,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          node-version: '20'
 
         # For Snyk Open Source you must first set up the development environment for your application's dependencies
         # For example for Node
