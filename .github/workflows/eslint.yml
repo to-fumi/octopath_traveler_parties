@@ -41,6 +41,8 @@ jobs:
           --ext .js,.jsx,.ts,.tsx
           --format @microsoft/eslint-formatter-sarif
           --output-file eslint-results.sarif
+          --format=json --output-file=eslint-results.json && npx eslint-to-sarif -o eslint-results.sarif eslint-results.json
+
         continue-on-error: true
 
       - name: Upload analysis results to GitHub
