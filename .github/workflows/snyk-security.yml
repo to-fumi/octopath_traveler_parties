@@ -77,7 +77,7 @@ jobs:
         run: docker build -t snyk/snyk-cli:npm .
         # Runs Snyk Container (Container and SCA) analysis and uploads result to Snyk.
       - name: Snyk Container monitor
-        run: snyk container monitor your/image-to-test --file=Dockerfile
+        run: snyk container monitor snyk/snyk-cli:npm --file=Dockerfile
 
         # Push the Snyk Code results into GitHub Code Scanning tab
       - name: Upload result to GitHub Code Scanning
