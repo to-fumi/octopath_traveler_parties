@@ -6,7 +6,9 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "next",
+        "next/core-web-vitals"
     ],
     "overrides": [
         {
@@ -30,6 +32,12 @@ module.exports = {
         "@typescript-eslint",
         "react"
     ],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
+        "react/react-in-jsx-scope": "off"
     }
 }
