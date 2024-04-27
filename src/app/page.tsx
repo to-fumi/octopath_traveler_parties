@@ -1,13 +1,22 @@
 "use client"
 
-import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import useSWR from 'swr'
+import { EnemyData, EnemyGroupByLevel } from '@/types/Enemy.type'
 
-type TabIdentifier = 'lv1' | 'lv25' | 'lv50' | 'lv75';
+type TabIdentifier = 1 | 25 | 50 | 75;
+
+const url = 'http://localhost:3000/api'
+const fetcher = (url: string, init?: RequestInit) => fetch(url, init)
+  .then(res => res.json())
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<TabIdentifier>('lv1');
-  const levels: TabIdentifier[] = ['lv1', 'lv25', 'lv50', 'lv75'];
+  const [activeTab, setActiveTab] = useState<TabIdentifier>(1);
+  const levels: TabIdentifier[] = [1, 25, 50, 75];
+
+  const {data, error, isLoading} = useSWR(url, fetcher)
 
   const switchTab = (newTab: TabIdentifier) => {
     setActiveTab(newTab);
@@ -15,55 +24,58 @@ export default function Home() {
 
   return (
     <main>
-      <div className="header">
-        <p className="headerTitle">OctoHub<span className="headerSubTitle">オクトパストラベラー ~大陸の覇者~</span></p>
+      <p className="mainTitle">ボス一覧</p>
+      <div className="border-b border-slate-200">
+        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center" role="tablist">
+          { levels.map((level) => (
+            <li key={ level } className="me-2" role="presentation">
+              <button
+                className={ `inline-block p-4 border-b-2 rounded-t-lg ${activeTab === level ? 'text-slate-700 border-slate-700' : 'hover:text-slate-400 hover:border-slate-400'}` }
+                onClick={ () => switchTab(level) }
+                role="tab"
+                aria-selected={ activeTab === level }
+              >
+                { `Lv.${level}~` }
+              </button>
+            </li>
+          )) }
+        </ul>
       </div>
-      <div className="mainFrame">
-        <p className="mainTitle">ボス一覧</p>
-        <div className="border-b border-slate-200">
-          <ul className="flex flex-wrap -mb-px text-sm font-medium text-center" role="tablist">
-            {levels.map((level) => (
-              <li key={level} className="me-2" role="presentation">
-                <button
-                  className={`inline-block p-4 border-b-2 rounded-t-lg ${activeTab === level ? 'text-slate-700 border-slate-700' : 'hover:text-slate-400 hover:border-slate-400'}`}
-                  onClick={() => switchTab(level)}
-                  role="tab"
-                  aria-selected={activeTab === level}
-                >
-                  {`Lv.${level.substring(2)}~`}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div id="level-tab-content" className="pt-4">
-          {levels.map((level) => (
-            <div
-              key={level}
-              className={`p-4 rounded-lg ${activeTab === level ? 'bg-slate-100' : 'hidden bg-slate-50'}`}
-              role="tabpanel"
-              aria-labelledby={`${level}-tab`}
-            >
-              <p className="text-sm text-slate-500">
-                This is some placeholder content for the <strong className="font-medium text-slate-900">{`${level.substring(2)} tab's associated content`}</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classNamees to control the content visibility and styling.
-              </p>
+      <div id="level-tab-content" className="pt-4">
+        { levels.map((level) => (
+          <div
+            key={ level }
+            className={ `p-8 grid gap-8 grid-cols-3 rounded-lg ${activeTab === level ? 'bg-slate-100' : 'hidden bg-slate-50'}` }
+            role="tabpanel"
+            aria-labelledby={ `${level}-tab` }
+          >
+            {error ? 'ERROR' : isLoading ? 'loading...' :
+              data.enemyGroup.map((enemyGroup: EnemyGroupByLevel) => 
+                enemyGroup.level == level 
+                ? enemyGroup.enemies.map((enemy: EnemyData) =>
+                  <Link href={`/enemy/${enemy.id}`} className="">
+                    <div className="rounded overflow-hidden shadow-lg">
+                      { enemy.boss[0].icon ? (
+                        <Image
+                          className="object-contain w-full aspect-square"
+                          alt="enemy-image"
+                          src={enemy.boss[0].icon}
+                          width={ 300 }
+                          height={ 300 }
+                        />
+                      ) : (
+                        <div className='object-contain aspect-square flex justify-center items-center'>
+                          <span className="material-symbols-outlined image-100">no_photography</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="px-6 py-4 text-base mb-2">{enemy.boss[0].name}</div>
+                  </Link>
+                ) : ""
+              )
+            }
             </div>
-          ))}
-        </div>
-
-        <p className="topContent">Level Tab</p>
-        <p className="topContent">Boss View</p>
-        <Image
-          src="/noimage.svg"
-          alt="enemy.boss.icon"
-          className=""
-          width={ 100 }
-          height={ 100 }
-          priority
-        />
-        <p className="topContent">オクトラの写記をイメージして、作成。ボスをクリックしたら別ページで左に敵を表示し右にパーティー編成をいいね数ランキングにして表示</p>
-        <p className="topContent">ボスの情報は名前とExなどのランクと弱点を表示したい。行動などの詳細は今後実装予定にしようかな</p>
-        <p className="topContent">※ボスをクリックしたら、パーティー編成のいいね数ごとのランキングを昇順で表示。また自身も作成できるようにCreateを表示</p>
+        )) }
       </div>
     </main>
   );

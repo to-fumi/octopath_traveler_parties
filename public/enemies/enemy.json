@@ -1,90 +1,263 @@
-{
-  "enemy": [
-    {
-      "boss": [
-        {
-          "name": "兵長トリスタン",
-          "icon": "./icons/ドカブロ.png",
-          "weakPoint": [
-            {
-              "first": ["槍", "弓", "本", "火", "闇"]
-            }
-          ]
-        },
-        {
-          "name": "傭兵",
-          "weakPoint": [
-            {
-              "first": ["剣", "杖", "氷", "雷", "光"]
-            }
-          ]
-        },
-        {
-          "name": "傭兵",
-          "weakPoint": [
-            {
-              "first": ["剣", "杖", "氷", "雷", "光"]
-            }
-          ]
-        }
-      ],
-      "level": 1
-    },
-    {
-      "boss": [
-        {
-          "name": "ソニア",
-          "icon": null,
-          "weakPoint": [
-            {
-              "first": ["剣", "槍", "火", "光"]
-            }
-          ]
-        }
-      ],
-      "level": 1
-    },
-    {
-      "boss": [
-        {
-          "name": "指輪に封印されし魔物",
-          "icon": null,
-          "weakPoint": [
-            {
-              "first": ["槍", "斧", "杖", "扇", "氷", "風"]
-            }
-          ]
-        }
-      ],
-      "level": 25
-    },
-    {
-      "boss": [
-        {
-          "name": "謎の刺客",
-          "icon": null,
-          "weakPoint": [
-            {
-              "first": ["短剣", "弓", "本", "火", "光"]
-            }
-          ]
-        }
-      ],
-      "level": 50
-    },
-    {
-      "boss": [
-        {
-          "name": "魔女リブラック",
-          "icon": null,
-          "weakPoint": [
-            {
-              "first": ["剣", "短剣", "風", "光"]
-            }
-          ]
-        }
-      ],
-      "level": 75
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "boss": [
+      {
+        "name": "兵長トリスタン",
+        "icon": "/enemies/icons/ドカブロ.png",
+        "weakPoint": [
+          {
+            "first": ["槍", "弓", "本", "火", "闇"]
+          }
+        ]
+      },
+      {
+        "name": "傭兵",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "杖", "氷", "雷", "光"]
+          }
+        ]
+      },
+      {
+        "name": "傭兵",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "杖", "氷", "雷", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 2,
+    "boss": [
+      {
+        "name": "ソニア",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "槍", "火", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 3,
+    "boss": [
+      {
+        "name": "ロッソ",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["槍", "杖", "扇", "風", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 4,
+    "boss": [
+      {
+        "name": "大富豪へルミニア",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["短剣", "斧", "本", "雷", "闇"]
+          }
+        ]
+      },
+      {
+        "name": "女執事",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["斧", "弓", "杖", "扇", "風"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 5,
+    "boss": [
+      {
+        "name": "狩王女へルミニア",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["短剣", "斧", "本", "雷", "闇"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 6,
+    "boss": [
+      {
+        "name": "緋翼兵団長タイタス",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["槍", "弓", "扇", "火", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 7,
+    "boss": [
+      {
+        "name": "雷剣将タイタス",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["槍", "弓", "扇", "火", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 8,
+    "boss": [
+      {
+        "name": "側近(前衛)",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "弓", "杖", "本", "氷", "雷"]
+          }
+        ]
+      },
+      {
+        "name": "側近(後衛)",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["槍", "短剣", "斧", "扇", "光", "闇"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 9,
+    "boss": [
+      {
+        "name": "大女優フランセスカ",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["槍", "弓", "扇", "火", "雷"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 10,
+    "boss": [
+      {
+        "name": "劇作家アーギュスト",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "槍", "弓", "氷", "風"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 11,
+    "boss": [
+      {
+        "name": "盗公子アーギュスト",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "槍", "弓", "氷", "風"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 12,
+    "boss": [
+      {
+        "name": "シバ",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "弓", "杖", "火", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 1
+  },
+  {
+    "id": 13,
+    "boss": [
+      {
+        "name": "指輪に封印されし魔物",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["槍", "斧", "杖", "扇", "氷", "風"]
+          }
+        ]
+      }
+    ],
+    "level": 25
+  },
+  {
+    "id": 14,
+    "boss": [
+      {
+        "name": "謎の刺客",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["短剣", "弓", "本", "火", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 50
+  },
+  {
+    "id": 15,
+    "boss": [
+      {
+        "name": "魔女リブラック",
+        "icon": null,
+        "weakPoint": [
+          {
+            "first": ["剣", "短剣", "風", "光"]
+          }
+        ]
+      }
+    ],
+    "level": 75
+  }
+]
