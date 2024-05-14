@@ -4,7 +4,7 @@
     "boss": [
       {
         "name": "兵長トリスタン",
-        "icon": "/enemies/icons/ドカブロ.png",
+        "icon": null,
         "weakPoint": [
           {
             "first": ["槍", "弓", "本", "火", "闇"]

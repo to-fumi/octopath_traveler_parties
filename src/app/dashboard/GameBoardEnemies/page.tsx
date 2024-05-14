@@ -19,8 +19,8 @@ export default function TraditionalEnemies() {
   const {data, error, isLoading} = useSWR(url, fetcher)
 
   const switchTab = (newTab: TabIdentifier) => {
-    setActiveTab(newTab);
-  };
+    setActiveTab(newTab)
+  }
 
   return (
     <>
